@@ -5,13 +5,11 @@
 
 <h3>Goal</h3>
 <p>This website was created in order to best learn ASP.NET MVC (3 and onwards) and put these learnings into practice.</p>
-<p>As much of the work I'm currently doing professionally revolves around the Microsoft stack, I felt that this practice-space would allow me to become more comfortable and familiar with the environment.</p>
+<p>As much of the work I'm currently doing professionally revolves around the Microsoft stack, I felt that this practice-space would allow me to become more comfortable and familiar with the environment</p>
 
 <h3>Plans</h3>
 <ul>
     <li>A system where users are able to enter and edit text to be displayed on a new page</li>
-    <li>Some implementation of AJAX</li>
     <li>Some sort of Dependency Injection exercise</li>
-    <li>Addition of external libraries</li>
 </ul>
 
