@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.ReviewModel
+﻿@model IEnumerable<WebApplication1.Models.ReviewModel>
 
 @{
     ViewBag.Title = "Opinions";
@@ -7,17 +7,34 @@
 
 <h2>Opinions</h2>
 
-@{ if (Model != null)
-    {
-        <div class="review">
-            <h4>@Model.Description</h4>
-            @* @Html.Image(Model.Restaurant.ImageUrl, Model.Restaurant.Name)*@
-            <span>Rating: @Model.Rating</span>
-            <p>
-                <span class="right">
-                    @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
-                </span>
-            </p>
-        </div>
-    }
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
 }
+
+</table>

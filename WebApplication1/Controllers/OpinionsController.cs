@@ -15,7 +15,8 @@ namespace WebApplication1.Controllers
         // GET: Opinions
         public ActionResult Opinions()
         {
-            return View();
+            var model = _db.Reviews;
+            return View(model);
         }
     }
 }
