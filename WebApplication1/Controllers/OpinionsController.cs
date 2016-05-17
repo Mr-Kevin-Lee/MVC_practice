@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
+using WebApplication1.Queries;
 
 namespace WebApplication1.Controllers
 {
@@ -17,6 +18,12 @@ namespace WebApplication1.Controllers
         {
             var model = _db.Reviews;
             return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var review = _db.Reviews.FindById(id);
+            return View(review);
         }
     }
 }
