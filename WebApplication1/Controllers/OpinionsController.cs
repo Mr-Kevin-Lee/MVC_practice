@@ -20,9 +20,24 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
+        // GET: Edit
         public ActionResult Edit(int id)
         {
             var review = _db.Reviews.FindById(id);
+            return View(review);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            var review = _db.Reviews.FindById(id);
+
+            if (TryUpdateModel(review))
+            {
+                _db.SaveChanges();
+                return RedirectToAction("Opinions");
+            }
+
             return View(review);
         }
     }
